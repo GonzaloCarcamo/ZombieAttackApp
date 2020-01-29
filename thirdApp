@@ -1,0 +1,99 @@
+Third App: ZombieAttack readme.txt
+
+* = comments
+gonzalo@gonzalo = in terminal
+t = text editor
++ = navigator
+
+gonzalo@gonzalo-Inspiron-3583:~$ rvm list
+   ruby-2.6.0 [ x86_64 ]
+=* ruby-2.6.3 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+gonzalo@gonzalo-Inspiron-3583:~$ rvm gemset list
+
+gemsets for ruby-2.6.3 (found in /home/gonzalo/.rvm/gems/ruby-2.6.3)
+   (default)
+   global
+   rails410
+=> rails523
+
+gonzalo@gonzalo-Inspiron-3583:~$ rvm gemset use rails523
+Using ruby-2.6.3 with gemset rails523
+
+gonzalo@gonzalo-Inspiron-3583:~$ rails new ZombieAttack --database=postgresql
+
+gonzalo@gonzalo-Inspiron-3583:~$ cd ZombieAttack
+
+gonzalo@gonzalo-Inspiron-3583:~/ZombieAttack$ rvm gemset use rails523
+Using ruby-2.6.3 with gemset rails523
+
+gonzalo@gonzalo-Inspiron-3583:~/ZombieAttack$ rails -v
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Rails 5.2.4.1
+
+gonzalo@gonzalo-Inspiron-3583:~/ZombieAttack$ rails g scaffold zombie weight:integer kills:integer weapon picture
+
+
+* db - migrate - 20200129...: nos permite manejar el estado de nuestra db evolutivamente.
+
+gonzalo@gonzalo-Inspiron-3583:~/ZombieAttack$ rails db:create
+
+gonzalo@gonzalo-Inspiron-3583:~/ZombieAttack$ rails db:migrate
+
++ ingresar a: http://localhost:3000/zombies/
+
+t add root in routes.rb
+
+* migrate: modificar db con el código de la aplicación
+
+* CRUD  create - read - update - delete 
+	
+	Para create = new y create 
+	Para read = index (para leer todos los zombies) 
+		    show (para leer zombie según su ID)
+	Para update = edit y update
+	Para delete = delete
+
+
+             
+/zombies(.:format)          zombies#index    GET
+/zombies(.:format)          zombies#create   POST
+/zombies/new(.:format)      zombies#new      GET
+/zombies/:id/edit(.:format) zombies#edit     GET
+/zombies/:id(.:format)      zombies#show     GET
+/zombies/:id(.:format)      zombies#update   PATCH
+/zombies/:id(.:format)      zombies#update   PUT 
+/zombies/:id(.:format)      zombies#destroy  DELETE 
+
+
+t modificar en show.html.erb <p> <strong> Picture:</strong><%= image_tag @zombie.picture %> </p>
+
+t 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
