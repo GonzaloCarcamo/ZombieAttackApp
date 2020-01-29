@@ -1,3 +1,6 @@
+<div class="row">
+<div class="col-md-6 offset-md-3">
+
 <%= form_with(model: zombie, local: true) do |form| %>
   <% if zombie.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +14,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :weight %>
-    <%= form.number_field :weight %>
+    <%= form.number_field :weight, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :kills %>
-    <%= form.number_field :kills %>
+    <%= form.number_field :kills, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :weapon %>
-    <%= form.text_field :weapon %>
+    <%= form.text_field :weapon, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :picture %>
-    <%= form.text_field :picture %>
+    <%= form.text_field :picture, class: 'form-control' %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
+</div>

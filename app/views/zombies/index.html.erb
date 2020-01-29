@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Zombies paradise</h1>
+<h1 class= 'text-center'>Zombies paradise</h1>
 
 <br>
 
-<%= link_to 'New Zombie', new_zombie_path %>
 
 <% @zombies.each_slice(3) do |zombies| %>
 
@@ -22,7 +21,7 @@
       <h5 class="card-title">Arma: <%= zombie.weapon %></h5>
       <h5 class="card-title">Muertes: <%= zombie.kills %></h5>
       <%= link_to 'Edit zombie', edit_zombie_path(zombie) %>
-      <%= link_to 'Edit zombie', edit_zombie_path(zombie) %>  
+       
     </div>
   
   </div>
